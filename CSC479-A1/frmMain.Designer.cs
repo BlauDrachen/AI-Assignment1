@@ -28,13 +28,181 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.txtLog = new System.Windows.Forms.TextBox();
+            this.tsMain = new System.Windows.Forms.ToolStrip();
+            this.btnRun = new System.Windows.Forms.ToolStripButton();
+            this.btnReset = new System.Windows.Forms.ToolStripButton();
+            this.tsSep1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cbSizes = new System.Windows.Forms.ToolStripComboBox();
+            this.tabPages = new System.Windows.Forms.TabControl();
+            this.tabCurrent = new System.Windows.Forms.TabPage();
+            this.tblCurrent = new System.Windows.Forms.TableLayoutPanel();
+            this.tabInitial = new System.Windows.Forms.TabPage();
+            this.tblInitial = new System.Windows.Forms.TableLayoutPanel();
+            this.tsMain.SuspendLayout();
+            this.tabPages.SuspendLayout();
+            this.tabCurrent.SuspendLayout();
+            this.tabInitial.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // txtLog
+            // 
+            this.txtLog.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtLog.Location = new System.Drawing.Point(0, 445);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtLog.Size = new System.Drawing.Size(500, 120);
+            this.txtLog.TabIndex = 0;
+            // 
+            // tsMain
+            // 
+            this.tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRun,
+            this.btnReset,
+            this.tsSep1,
+            this.cbSizes});
+            this.tsMain.Location = new System.Drawing.Point(0, 0);
+            this.tsMain.Name = "tsMain";
+            this.tsMain.Size = new System.Drawing.Size(500, 25);
+            this.tsMain.TabIndex = 2;
+            this.tsMain.Text = "toolStrip1";
+            // 
+            // btnRun
+            // 
+            this.btnRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnRun.Image = ((System.Drawing.Image)(resources.GetObject("btnRun.Image")));
+            this.btnRun.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnRun.Name = "btnRun";
+            this.btnRun.Size = new System.Drawing.Size(23, 22);
+            this.btnRun.Text = "toolStripButton2";
+            // 
+            // btnReset
+            // 
+            this.btnReset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(23, 22);
+            this.btnReset.Text = "toolStripButton1";
+            // 
+            // tsSep1
+            // 
+            this.tsSep1.Name = "tsSep1";
+            this.tsSep1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // cbSizes
+            // 
+            this.cbSizes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSizes.DropDownWidth = 121;
+            this.cbSizes.Items.AddRange(new object[] {
+            "2x2",
+            "3x3",
+            "4x4"});
+            this.cbSizes.Name = "cbSizes";
+            this.cbSizes.Size = new System.Drawing.Size(75, 25);
+            this.cbSizes.SelectedIndexChanged += new System.EventHandler(this.cbSizes_SelectedIndexChanged);
+            // 
+            // tabPages
+            // 
+            this.tabPages.Controls.Add(this.tabCurrent);
+            this.tabPages.Controls.Add(this.tabInitial);
+            this.tabPages.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPages.Location = new System.Drawing.Point(0, 25);
+            this.tabPages.Name = "tabPages";
+            this.tabPages.SelectedIndex = 0;
+            this.tabPages.Size = new System.Drawing.Size(500, 420);
+            this.tabPages.TabIndex = 3;
+            // 
+            // tabCurrent
+            // 
+            this.tabCurrent.Controls.Add(this.tblCurrent);
+            this.tabCurrent.Location = new System.Drawing.Point(4, 22);
+            this.tabCurrent.Name = "tabCurrent";
+            this.tabCurrent.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCurrent.Size = new System.Drawing.Size(492, 394);
+            this.tabCurrent.TabIndex = 1;
+            this.tabCurrent.Text = "Current State";
+            this.tabCurrent.UseVisualStyleBackColor = true;
+            // 
+            // tblCurrent
+            // 
+            this.tblCurrent.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tblCurrent.ColumnCount = 2;
+            this.tblCurrent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblCurrent.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblCurrent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblCurrent.Location = new System.Drawing.Point(3, 3);
+            this.tblCurrent.Name = "tblCurrent";
+            this.tblCurrent.RowCount = 2;
+            this.tblCurrent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblCurrent.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblCurrent.Size = new System.Drawing.Size(486, 388);
+            this.tblCurrent.TabIndex = 0;
+            // 
+            // tabInitial
+            // 
+            this.tabInitial.Controls.Add(this.tblInitial);
+            this.tabInitial.Location = new System.Drawing.Point(4, 22);
+            this.tabInitial.Name = "tabInitial";
+            this.tabInitial.Padding = new System.Windows.Forms.Padding(3);
+            this.tabInitial.Size = new System.Drawing.Size(492, 394);
+            this.tabInitial.TabIndex = 0;
+            this.tabInitial.Text = "Initial State";
+            this.tabInitial.UseVisualStyleBackColor = true;
+            // 
+            // tblInitial
+            // 
+            this.tblInitial.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tblInitial.ColumnCount = 2;
+            this.tblInitial.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblInitial.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblInitial.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblInitial.Location = new System.Drawing.Point(3, 3);
+            this.tblInitial.Name = "tblInitial";
+            this.tblInitial.RowCount = 2;
+            this.tblInitial.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblInitial.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblInitial.Size = new System.Drawing.Size(486, 388);
+            this.tblInitial.TabIndex = 1;
+            // 
+            // frmMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(500, 565);
+            this.Controls.Add(this.tabPages);
+            this.Controls.Add(this.tsMain);
+            this.Controls.Add(this.txtLog);
+            this.Name = "frmMain";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "CSC 479A Assignment #1";
+            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.tsMain.ResumeLayout(false);
+            this.tsMain.PerformLayout();
+            this.tabPages.ResumeLayout(false);
+            this.tabCurrent.ResumeLayout(false);
+            this.tabInitial.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.ToolStrip tsMain;
+        private System.Windows.Forms.ToolStripComboBox cbSizes;
+        private System.Windows.Forms.TabControl tabPages;
+        private System.Windows.Forms.TabPage tabCurrent;
+        private System.Windows.Forms.TableLayoutPanel tblCurrent;
+        private System.Windows.Forms.TabPage tabInitial;
+        private System.Windows.Forms.ToolStripButton btnRun;
+        private System.Windows.Forms.ToolStripButton btnReset;
+        private System.Windows.Forms.ToolStripSeparator tsSep1;
+        private System.Windows.Forms.TableLayoutPanel tblInitial;
     }
 }
 
