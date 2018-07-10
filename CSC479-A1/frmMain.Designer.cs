@@ -1,6 +1,6 @@
 ﻿namespace CSC479_A1
 {
-    partial class frmMain
+    partial class FrmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.txtLog = new System.Windows.Forms.TextBox();
             this.tsMain = new System.Windows.Forms.ToolStrip();
             this.btnRun = new System.Windows.Forms.ToolStripButton();
@@ -40,6 +40,9 @@
             this.tblCurrent = new System.Windows.Forms.TableLayoutPanel();
             this.tabInitial = new System.Windows.Forms.TabPage();
             this.tblInitial = new System.Windows.Forms.TableLayoutPanel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.cbDelay = new System.Windows.Forms.ToolStripComboBox();
+            this.lblDelay = new System.Windows.Forms.ToolStripLabel();
             this.tsMain.SuspendLayout();
             this.tabPages.SuspendLayout();
             this.tabCurrent.SuspendLayout();
@@ -63,7 +66,10 @@
             this.btnRun,
             this.btnReset,
             this.tsSep1,
-            this.cbSizes});
+            this.cbSizes,
+            this.toolStripSeparator1,
+            this.lblDelay,
+            this.cbDelay});
             this.tsMain.Location = new System.Drawing.Point(0, 0);
             this.tsMain.Name = "tsMain";
             this.tsMain.Size = new System.Drawing.Size(500, 25);
@@ -72,21 +78,21 @@
             // 
             // btnRun
             // 
-            this.btnRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnRun.Image = ((System.Drawing.Image)(resources.GetObject("btnRun.Image")));
             this.btnRun.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(23, 22);
-            this.btnRun.Text = "toolStripButton2";
+            this.btnRun.Size = new System.Drawing.Size(48, 22);
+            this.btnRun.Text = "Run";
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // btnReset
             // 
-            this.btnReset.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(23, 22);
-            this.btnReset.Text = "toolStripButton1";
+            this.btnReset.Size = new System.Drawing.Size(55, 22);
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // tsSep1
             // 
@@ -168,6 +174,30 @@
             this.tblInitial.Size = new System.Drawing.Size(486, 388);
             this.tblInitial.TabIndex = 1;
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // cbDelay
+            // 
+            this.cbDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDelay.Items.AddRange(new object[] {
+            "No Delay",
+            "0.1 Seconds",
+            "0.5 Seconds",
+            "1 Second",
+            "2 Seconds"});
+            this.cbDelay.Name = "cbDelay";
+            this.cbDelay.Size = new System.Drawing.Size(90, 25);
+            this.cbDelay.SelectedIndexChanged += new System.EventHandler(this.cbDelay_SelectedIndexChanged);
+            // 
+            // lblDelay
+            // 
+            this.lblDelay.Name = "lblDelay";
+            this.lblDelay.Size = new System.Drawing.Size(80, 22);
+            this.lblDelay.Text = "Update Delay:";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,7 +206,7 @@
             this.Controls.Add(this.tabPages);
             this.Controls.Add(this.tsMain);
             this.Controls.Add(this.txtLog);
-            this.Name = "frmMain";
+            this.Name = "FrmMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "CSC 479A Assignment #1";
             this.Load += new System.EventHandler(this.frmMain_Load);
@@ -203,6 +233,9 @@
         private System.Windows.Forms.ToolStripButton btnReset;
         private System.Windows.Forms.ToolStripSeparator tsSep1;
         private System.Windows.Forms.TableLayoutPanel tblInitial;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripComboBox cbDelay;
+        private System.Windows.Forms.ToolStripLabel lblDelay;
     }
 }
 
