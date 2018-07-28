@@ -35,14 +35,14 @@
             this.btnReset = new System.Windows.Forms.ToolStripButton();
             this.tsSep1 = new System.Windows.Forms.ToolStripSeparator();
             this.cbSizes = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.lblDelay = new System.Windows.Forms.ToolStripLabel();
+            this.cbDelay = new System.Windows.Forms.ToolStripComboBox();
             this.tabPages = new System.Windows.Forms.TabControl();
             this.tabCurrent = new System.Windows.Forms.TabPage();
             this.tblCurrent = new System.Windows.Forms.TableLayoutPanel();
             this.tabInitial = new System.Windows.Forms.TabPage();
             this.tblInitial = new System.Windows.Forms.TableLayoutPanel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.cbDelay = new System.Windows.Forms.ToolStripComboBox();
-            this.lblDelay = new System.Windows.Forms.ToolStripLabel();
             this.tsMain.SuspendLayout();
             this.tabPages.SuspendLayout();
             this.tabCurrent.SuspendLayout();
@@ -111,6 +111,30 @@
             this.cbSizes.Size = new System.Drawing.Size(75, 25);
             this.cbSizes.SelectedIndexChanged += new System.EventHandler(this.cbSizes_SelectedIndexChanged);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // lblDelay
+            // 
+            this.lblDelay.Name = "lblDelay";
+            this.lblDelay.Size = new System.Drawing.Size(80, 22);
+            this.lblDelay.Text = "Update Delay:";
+            // 
+            // cbDelay
+            // 
+            this.cbDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDelay.Items.AddRange(new object[] {
+            "No Delay",
+            "0.1 Seconds",
+            "0.5 Seconds",
+            "1 Second",
+            "2 Seconds"});
+            this.cbDelay.Name = "cbDelay";
+            this.cbDelay.Size = new System.Drawing.Size(90, 25);
+            this.cbDelay.SelectedIndexChanged += new System.EventHandler(this.cbDelay_SelectedIndexChanged);
+            // 
             // tabPages
             // 
             this.tabPages.Controls.Add(this.tabCurrent);
@@ -174,31 +198,7 @@
             this.tblInitial.Size = new System.Drawing.Size(486, 388);
             this.tblInitial.TabIndex = 1;
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // cbDelay
-            // 
-            this.cbDelay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDelay.Items.AddRange(new object[] {
-            "No Delay",
-            "0.1 Seconds",
-            "0.5 Seconds",
-            "1 Second",
-            "2 Seconds"});
-            this.cbDelay.Name = "cbDelay";
-            this.cbDelay.Size = new System.Drawing.Size(90, 25);
-            this.cbDelay.SelectedIndexChanged += new System.EventHandler(this.cbDelay_SelectedIndexChanged);
-            // 
-            // lblDelay
-            // 
-            this.lblDelay.Name = "lblDelay";
-            this.lblDelay.Size = new System.Drawing.Size(80, 22);
-            this.lblDelay.Text = "Update Delay:";
-            // 
-            // frmMain
+            // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
