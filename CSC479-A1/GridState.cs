@@ -48,6 +48,8 @@ namespace CSC479_A1
 
             // Copy State Grid
             CopyGrid(toCopy.Dirty);
+
+            var breakhere = true;
         }
 
         // Build Random State

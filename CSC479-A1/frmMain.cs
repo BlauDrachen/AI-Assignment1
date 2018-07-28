@@ -36,8 +36,8 @@ namespace CSC479_A1
 
         private void SetupStates(int gridSize, int agentXPos = -1, int agentYPos = -1)
         {
-            _currentState = new GridState(gridSize);
-            _initialState = new GridState(_currentState);
+            _initialState = new GridState(gridSize);
+            _currentState = new GridState(_initialState);
         }
 
         private void cbSizes_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,13 +58,14 @@ namespace CSC479_A1
             {
                 for (int j = 0; j < _gridSize; j++)
                 {
-                    AddCellControls(tblCurrent, i, j);
+                    AddCellControls(tblInitial, i, j, true);
+                    AddCellControls(tblCurrent, i, j);                    
                 }
             }
 
             // Build new state to start system with
             SetupStates(_gridSize, agentRow, agentCol);
-            UpdateCellControls(_currentState);
+            UpdateCellControls(_currentState, _initialState);
         }
 
         private void cbDelay_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,7 +91,7 @@ namespace CSC479_A1
         {
             // Build new state
             SetupStates(_gridSize, agentRow, agentCol);
-            UpdateCellControls(_currentState);
+            UpdateCellControls(_currentState, _initialState);
         }
 
         private void SetPanelGridSize(TableLayoutPanel tlp)
@@ -111,7 +112,7 @@ namespace CSC479_A1
             }
         }
 
-        private void AddCellControls(TableLayoutPanel tlpParent, int row, int col)
+        private void AddCellControls(TableLayoutPanel tlpParent, int row, int col, bool isInitial = false)
         {
             // Add inner Table Layout Panel
             TableLayoutPanel tlp = new TableLayoutPanel();
@@ -129,14 +130,14 @@ namespace CSC479_A1
 
             // Row 0
             Label lblState = new Label();
-            lblState.Name = $"lblState_{row}_{col}";
+            lblState.Name = $"lblState{(isInitial ? "_init" : "")}_{row}_{col}";
             lblState.Text = $@"{row},{col}";
             lblState.Font = new Font(lblState.Font, FontStyle.Bold);
 
             // Row 1
             // Add Agent Picture Box
             PictureBox pbAgent = new PictureBox();
-            pbAgent.Name = $"pbAgent_{row}_{col}";
+            pbAgent.Name = $"pbAgent{(isInitial ? "_init" : "")}_{row}_{col}";
             pbAgent.SizeMode = PictureBoxSizeMode.CenterImage;
             pbAgent.Dock = DockStyle.Fill;
             pbAgent.Image = Resources.agent;
@@ -144,7 +145,7 @@ namespace CSC479_A1
 
             // Add Dirt Picture Box
             PictureBox pbDirt = new PictureBox();
-            pbDirt.Name = $"pbDirt_{row}_{col}";
+            pbDirt.Name = $"pbDirt{(isInitial ? "_init" : "")}_{row}_{col}";
             pbDirt.SizeMode = PictureBoxSizeMode.CenterImage;
             pbDirt.Dock = DockStyle.Fill;
             pbDirt.Image = Resources.dirt;
@@ -159,7 +160,7 @@ namespace CSC479_A1
             tlpParent.Controls.Add(tlp, col, row);
         }
 
-        private void UpdateCellControls(GridState state)
+        private void UpdateCellControls(GridState state, GridState initState = null)
         {
             for (int i = 0; i < _gridSize; i++)
             {
@@ -170,6 +171,15 @@ namespace CSC479_A1
 
                     PictureBox pbAgent = (PictureBox)Controls.Find($"pbAgent_{i}_{j}", true)[0];
                     pbAgent.Visible = (state.AgentXPos == i && state.AgentYPos == j);
+
+                    if (initState != null)
+                    {
+                        PictureBox pbInitDirt = (PictureBox)Controls.Find($"pbDirt_init_{i}_{j}", true)[0];
+                        pbInitDirt.Visible = (initState.Dirty[i, j]);
+
+                        PictureBox pbInitAgent = (PictureBox)Controls.Find($"pbAgent_init_{i}_{j}", true)[0];
+                        pbInitAgent.Visible = (initState.AgentXPos == i && state.AgentYPos == j);
+                    }
                 }
             }
         }
